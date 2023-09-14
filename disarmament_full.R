@@ -1,5 +1,5 @@
 
-# A Textual Analysis of the Speeches at the General Assembly's First Committee in 2021.
+# A Textual Analysis of the Speeches at the General Assembly's First Committee.
 
 # LOAD PACKAGES--------------------------------------------------------
 library(tidyverse)
@@ -852,7 +852,7 @@ pdf_links <- do.call(rbind, pdf_links)
   
 
 
-  ### calculate the relative frequency of the terms in pdf_merged_en$speeches per pdf_merged_en$year by number of-------
+  ### calculate the relative frequency of the terms in pdf_merged_en$speeches per pdf_merged_en$year
 
   
   library(dplyr)
@@ -898,8 +898,6 @@ pdf_links <- do.call(rbind, pdf_links)
     geom_smooth(method = "loess", formula = y ~ x) +
     labs(x = "Year", y = "Relative Frequency", title = "Relative frequency of mentions to military spending")+
     theme_minimal()
-  
-  
   
   ### relative frequency to the number of speeches
   # Define the terms
@@ -955,10 +953,6 @@ pdf_links <- do.call(rbind, pdf_links)
   
   pp
   
-  library(ggstream)
-  # install.packages("ggplot2")
-  library(ggplot2)
-  
   cols <- c("#FFB400", "#FFC740", "#C20008", "#FF020D", "#13AFEF")
   
   ggplot(data, aes(x = year, y = value, fill = name))+
@@ -966,8 +960,6 @@ pdf_links <- do.call(rbind, pdf_links)
     geom_stream(extra_span = 0.2, true_range = "none",
                 alpha = 0.3) +
      theme_minimal()
-  
-  
   
   remotes::install_github("EmilHvitfeldt/paletteer")
   library(paletteer)
@@ -1036,10 +1028,3 @@ pdf_links <- do.call(rbind, pdf_links)
     geom_stream(true_range = "none", alpha = 0.3, color = 1, lwd = 0.25) +
     scale_fill_manual(values = color_palette) +
     theme_minimal()
-  
-  
-  
-  
-  
-  
-    
